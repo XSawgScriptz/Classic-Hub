@@ -1,0 +1,167 @@
+local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+function JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU(data) m=string.sub(data, 0, 55) data=data:gsub(m,'')
+
+data = string.gsub(data, '[^'..b..'=]', '') return (data:gsub('.', function(x) if (x == '=') then return '' end local r,f='',(b:find(x)-1) for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end return r; end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x) if (#x ~= 8) then return '' end local c=0 for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end return string.char(c) end)) end
+
+
+ 
+
+
+local Fluent = loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('RBCibPjzsnvXVvnEXpPAaduYunIFQRdNRWuGixMWRtbTwKMaDyPzymkaHR0cHM6Ly9naXRodWIuY29tL2Rhd2lkLXNjcmlwdHMvRmx1ZW50L3JlbGVhc2VzL2xhdGVzdC9kb3dubG9hZC9tYWluLmx1YQ==')))()
+local SaveManager = loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('rPbgeFxqYbInncyvDtRGagmCxzQVhzZgdJIfwvbNVMPUtDZqhsjDysvaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2Rhd2lkLXNjcmlwdHMvRmx1ZW50L21hc3Rlci9BZGRvbnMvU2F2ZU1hbmFnZXIubHVh')))()
+local InterfaceManager = loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('oPihlcuOgLqgZqYrwiRudlflcckDMUiHRALsnbHLnnWpajfwtCXjayraHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2Rhd2lkLXNjcmlwdHMvRmx1ZW50L21hc3Rlci9BZGRvbnMvSW50ZXJmYWNlTWFuYWdlci5sdWE=')))()
+
+local Window = Fluent:CreateWindow({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('QmsLttLpBKnpxxVlETQHBbjXFghQrDcThchDKKZrqLjjZPWffapfGEzQ2xhc3NpYyBIdWIg') .. Fluent.Version,
+    SubTitle = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('ufMfBPsAJBeNEiUTpjHFYfGMZPiLdHRutCuZymbgESdAZPammUlbScXQnkgemVsb3hfMDAw'),
+    TabWidth = 160,
+    Size = UDim2.fromOffset(480, 360),
+    Acrylic = true,
+    Theme = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('QXHSnNGfDmkYNEQCgswUPIWyLZpjpLTBtmdSFZFwMpXrEirCJDwlYYcRGFyaw=='),
+    MinimizeKey = Enum.KeyCode.LeftControl
+})
+
+local Tabs = {
+    ClassicRobloxEvent = Window:AddTab({ Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('WLEbTSecApioPeinvuLGvERBoXSvlQGVtxGMcdJRuyrLPpgDdInFrFjQ2xhc3NpYyBSb2Jsb3ggRXZlbnQ='), Icon = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('LwYwJGpwrIkonwBzaZVHCMeHYOpVLIZlQlXYtXHrlzymMtjZlEUaKeFY29kZQ==') }),
+    Settings = Window:AddTab({ Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('BJjCFkWtkrgBrxSWKrPSZHoajBIIvgBrFwsrSmXmANYIQuYySClhUYgU2V0dGluZ3M='), Icon = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('arbvlqnlXdkzWdirJxmmJadZlmiRmigWRllHxxbcsEFUgdOMMXvtEDLc2V0dGluZ3M=') }),
+    Credits = Window:AddTab({ Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('nVFpPyKbiEHHJYxGXGqFNKruZSuOCwfdQUxJdZiFqRKePouJCtqjZgbQ3JlZGl0cw=='), Icon = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('gqJKinlMoiyJMuZyCFFOdmABHEPxLiqSEHkNdMsvzUlCNrwYqxFZVkyZ3JvdXA=') }) -- Moved Credits tab below Settings
+}
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('PccLVvmoGmORJpXDitCIWtrLXMgmBFLvAyodKFxesVNTXDNreRKyNYtR3VuZmlnaHQgQXJlbmE='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('SdTrarKoFDVTgfPzkXfYKSolHJNJKlPMoqVkpEJoBrCQTwLdIOJglzWaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0d1bmZpZ2h0'), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('AVIoYGWPbZIewJFuUJXqOOwYnEsoHgnOhJkURVjbqRcZUGMNrBUbqMYQ2xhc3NpYyBCbGFkZSBCYWxs'),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('DyvXbBVXIjUOLYnxVqFafMhNigvoRlncBvfHWuRejHVrNrrwZRfgubWaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0JsYWRlQmFsbA=='), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('DuHeQlhneWiEhcPZxeRwmrTsqNqQZXdHWIKPhTNFzwfSoyIdVxegDMhQWRvcHQgTWU='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('DPyVRMbsUWvTVucQJNEiDdyeexFgNQXOHOzSgluhlJlvqfPKsGNyypbaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0Fkb3B0TWU='), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('UsDsgjWCBvPObYEtAqhuWvtejtfqToAeXpavphJYILOJLRUDKCIBOdPTXkgUmVzdGF1cmFudA=='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('EsGzVVemAgvUnlGdiRTzpDbYMBzdpvOcrdAvnxSVAJrHUlOsTSwGkCVaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY1Jlc3RhdXJhbnQ='), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('gPpGhzMNaJjsjcqAoTLnkvurhtAPxdgeDssJcHTtQJLVctFvUTeHTOVVG9pbGV0IFRvd2VyIERlZmVuY2U='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('uYHRoiEfFWBthTZGZldCbimoXBupeMslEvekqhLOoBeBUeLENhtQlkqaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY1RvaWxldFRvd2Vy'), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('WOqySeczuLaxNCRKbcjHpMLosNODoRAmicKOzIffdDEWztKMuWwgYwVQmVlIFN3YXJtIFNpbXVsYXRvcg=='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('CCQBCxZdcGmkJnsMbBUUxjTJnyOGYwXIeNSlkzDUZQhekKmhzxALDuKaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0JlZVN3YXJt'), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('aZNdfWpNCTWMoDBFPYuBKxhAFokJFxlbcAVdBzWqLaVWXQISyvkfnBORHJlc3MgVG8gSW1wcmVzcw=='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('GDXNmCargciCqOIqCWbPODkWznsOoIIrypDJgZvvYSSHJwxkGpMeyZvaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0RyZXNzVG9JbXByZXNz'), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('GxCJTacptnvZuredrwIAHlFqDHJPWXbmOYaSdraQkeVWcNXasQQuTJcQXJzZW5hbA=='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('qFhcQRaNRlGoCpErTJOqgEjqubbEnSATVzWtXWQBOSmLAheOTDBIZUQaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0Fyc2VuYWw='), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('LwXLUXEwMsnmDMEQnFyWDPAyKdxhIkuXgktUNsYrRMHGQOGjeWmwgOgRHJpdmluZyBFbXBpcmU='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('dlHRsTEGLmpbMrDEzOiggjUytvQQkXdsHYXOnzFxvafurJmLqjKkiPOaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0RyaXZpbmdFbXBpcmU='), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('wWTdYsMMQolqYjSCbOLngtYTFpoBPAVRTWhtbsAfAzuBmDSmVYzgFVFQ2xpcCBJdA=='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('ekBcuLEocvqbFowZrmAntcGkvTvneWIVQxrxlpKeOoChgUpdSYaeUEOaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0NsaXBJdA=='), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('GYfzeIfOzrFOrMEsDEEcBFLZrlNdQbyVILTeWmNyPpfdcBLbCMUXpFxVG93ZXIgRGVmZW5jZSBTaW11bGF0b3I='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('oSYzMFNHRdfGiAtCeJzWknULofjkPkMKEHiuYEOXTMxjCkkxeuqjBCPaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY1Rvd2VyRGVmZW5zZQ=='), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('CGHSdrUDjtZTPZmmKOqdIBhlMHFPGaMEPzTNNCtXbeoZAAYuiLQXEaeQmVkIFdhcnM='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('ZcGqCmEtWnCPOgOTtmINVFCWXQEeLdxxicbntWiKNJGsmOGPLtzYHnGaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0JlZFdhcnM='), true))()
+    end
+})
+
+Tabs.ClassicRobloxEvent:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('KxJYocbtxALsTjNLeoxcSINGUMNxPccGckzXYtDwEBMTSwNTxrvKIMRRHJhZ29uIEFkdmVudHVyZXM='),
+    Callback = function()
+        loadstring(game:HttpGet(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('gOBuqKIKxzDvIMWYImRzcddQoOWgXoNRWHMESXmjPoURTXZkQkrulrMaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvcmFTY3JpcHQvU2NyaXB0L21haW4vQ2xhc3NpY0RyYWdvbg=='), true))()
+    end
+})
+
+Tabs.Settings:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('mdCglmPzoIXOqyAKAPaziyHYEBIKIoJwDFRcfOwQXHjmuqlwogaNnhHR2VuZXJhbCBTZXR0aW5ncw=='),
+    Callback = function()
+        print(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('YGrQajEnyAQRScEwTeLDYdTnyZsTkNAAENSYpZZLXbMrSVMEWNgGjXnR2VuZXJhbCBTZXR0aW5ncyBjbGlja2Vk'))
+        -- Add actions for general settings button
+    end
+})
+
+-- Add other settings buttons...
+
+Tabs.Credits:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('pMbTLlEGwKkqzvVDKyUGavmaewoomkWWqkLOIAViqXWrJsdwhMXuurSQ3JlZGl0cyB0bzogemVsb3hfMDAw'),
+    Callback = function()
+        print(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('SixdeFAsOgBwXmNbDIQdlsEEkTXTfRMCifbdkvIKCbeMtFBoLYgfFESQ3JlZGl0cyB0bzogemVsb3hfMDAw'))
+    end
+})
+
+Tabs.Credits:AddButton({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('sDxUNZCbIFBvZJIEOWhDAKyVqbDxBXYeqkRpWNWqxxizqcgtBwNFVTDQ3JlZGl0cyB0bzogVG9yYSBpc21l'),
+    Callback = function()
+        print(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('jWVyXAqbnmFqAdPSvXSbwpPJQdomTeFNoGOOLwvJbbwhFBFtTYBDVLkQ3JlZGl0cyB0bzogVG9yYSBpc21l'))
+    end
+})
+
+-- Add other buttons for credits...
+
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+
+InterfaceManager:SetFolder(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('jvKIZtcTpNbvxofNkZllZlbFfiQSaldYwTOGPhKRiZzwaumquMkhCGjRmx1ZW50U2NyaXB0SHVi'))
+SaveManager:SetFolder(JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('CabUxYZsTQxqQcPrhvyLvqYAcEpogpIKACkwaPTMkywcsLWNalmwdNQRmx1ZW50U2NyaXB0SHViL3NwZWNpZmljLWdhbWU='))
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+Window:SelectTab(1)
+
+Fluent:Notify({
+    Title = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('TfKqkuiHXsmKbtngRJIFUayQvAhTFxLBwDWTJJFWgtyDQwmzUSsEhrHQ2xhc3NpYyBIdWI='),
+    Content = JbBarkAPLhbHatHLKCELEZkmSLPfFqVinUKaNNFpwaYMAaFmsSSOXU('IentbaydbPNxNsUDNaTpFFTXQCVgwnBfGASaJwtdFnjWRipUBNjqilkQ2xhc3NpYyBIdWIgTG9hZGVkIEVOSk9ZIPCfmI4g'),
+    Duration = 10
+})
+
+SaveManager:LoadAutoloadConfig()
